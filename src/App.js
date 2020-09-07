@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import marked from 'marked';
 
 function App() {
+
+  function mark(e){
+    document.getElementById("preview").innerHTML = marked(e.target.value);
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <div className="markdown">
+
+      <div id="editor">
+      <h1 style={{textAlign: "center"}}>Markdown Editor</h1>
+      <form>
+      <textarea id="text" onInput={mark}></textarea>
+      <span id="l">
+      <button>LOL</button>
+      </span>
+      </form>
+      </div>
+      
+      <div id="display">
+      <h1 style={{textAlign: "center"}}>Markdown Preview</h1>
+      <div id="preview">
+      </div>
+      </div>
+
+    </div>
     </div>
   );
 }
