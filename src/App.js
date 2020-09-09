@@ -37,6 +37,11 @@ function App() {
     document.getElementById('preview').innerHTML = md.render(creator);
   }
 
+  function clear(){
+    document.getElementById('text').value = "";
+    document.getElementById('preview').innerHTML = "";
+  }
+
   return (
     <div>
     <div className="markdown">
@@ -75,6 +80,7 @@ function App() {
       <textarea id="text" onChange={mark}></textarea>
       <button type="button" onClick={markguide}>Markdown Guide</button>
       <button type="button" onClick={creators}>Creator's Preface</button>
+      <button type="button" onClick={clear}>Clear</button>
       </form>
       </div>
 
