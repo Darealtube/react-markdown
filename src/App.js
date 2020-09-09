@@ -2,17 +2,18 @@ import React, {useState} from 'react';
 import './App.css';
 import { Remarkable } from 'remarkable';
 import { linkify } from 'remarkable/linkify';
-
+import { guides, creator } from './guides/guides.js';
 
 function App() {
   const [fontsize,setfontsize] = useState("20px");
   const [fontstyle, setfontstyle] = useState("Arial")
 
+  var md = new Remarkable('full', {
+    html: true,
+    typographer: true
+  }).use(linkify);
+
   function mark(e){
-    var md = new Remarkable('full', {
-      html: true,
-      typographer: true
-    }).use(linkify);
     document.getElementById("preview").innerHTML = md.render(e.target.value);
   }
 
@@ -23,7 +24,17 @@ function App() {
 
   function fontChange(e){
     setfontstyle(e.target.value);
-    document.getElementById('preview').style.fontStyle = e.target.value;
+    document.getElementById('preview').style.fontFamily = e.target.value;
+  }
+
+  function markguide(){
+    document.getElementById('text').value = guides;
+    document.getElementById('preview').innerHTML = md.render(guides);
+  }
+
+  function creators(){
+    document.getElementById('text').value = creator;
+    document.getElementById('preview').innerHTML = md.render(creator);
   }
 
   return (
@@ -49,19 +60,21 @@ function App() {
     <div id="dropdown" class="dropdown2">
     <button class="dropbtn2">Font Style: {fontstyle}</button>
     <div id="dropdown-content" class="dropdown-content2">
-    <button onClick={fontChange} value="Arial">Arial</button>
-    <button onClick={fontChange} value="Verdana">Verdana</button>
-    <button onClick={fontChange} value="Georgia">Georgia</button>
-    <button onClick={fontChange} value="Times New Roman">Times New Roman</button>
-    <button onClick={fontChange} value="Courier New">Courier New</button>
-    <button onClick={fontChange} value="Lucida Console">Lucida Console</button>
+    <button onClick={fontChange} value="Arial, Helvetica, sans-serif">Arial</button>
+    <button onClick={fontChange} value="Verdana, Helvetica, sans-serif">Verdana</button>
+    <button onClick={fontChange} value="Georgia, Helvetica, sans-serif">Georgia</button>
+    <button onClick={fontChange} value="'Times New Roman', Times, serif">Times New Roman</button>
+    <button onClick={fontChange} value="'Courier New', Courier, monospace">Courier New</button>
+    <button onClick={fontChange} value="'Lucida Console', Courier, monospace">Lucida Console</button>
     </div>
     </div>
 
       <div id="editor">
       <h1 style={{textAlign: "center"}}>Markdown Editor</h1>
       <form>
-      <textarea id="text" onInput={mark}></textarea>
+      <textarea id="text" onChange={mark}></textarea>
+      <button type="button" onClick={markguide}>Markdown Guide</button>
+      <button type="button" onClick={creators}>Creator's Preface</button>
       </form>
       </div>
 

@@ -130,7 +130,7 @@ img{
 
 
 .dropbtn {
-  background-color: #4CAF50;
+  background: linear-gradient(65deg, #457b9d, #a8dadc);
   color: white;
   padding: 14px;
   font-size: 12px;
@@ -146,7 +146,7 @@ img{
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: black;
   min-width: 50px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -154,28 +154,30 @@ img{
 
 .dropdown-content button {
   color: black;
+  font-size: 15px;
+  background: linear-gradient(85deg,#f1f1f1,#0077b6);
   padding: 4px 38px;
   text-decoration: none;
   display: block;
+  font-weight: 400;
 }
 
-.dropdown-content button:hover {background-color: #ddd;}
+.dropdown-content button:hover {background: linear-gradient(85deg,#a8dadc,#f1faee);}
 
 .dropdown:hover .dropdown-content {display: block !important;}
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
-
 .dropdown2{
   position: relative;
   display: inline-block;
   left: 5rem;
+
 }
 
 .dropdown-content2{
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
   min-width: 50px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -183,20 +185,24 @@ img{
 
 .dropdown-content2 button {
   color: black;
-  padding: 4px 38px;
+  font-size: 25px;
+  background: linear-gradient(85deg,#f1f1f1,#0077b6);
+  height: 45px;
+  width: 268px;
+  font-weight: 400;
   text-decoration: none;
   display: block;
 }
 
 .dropbtn2 {
-  background-color: #4CAF50;
+  background: linear-gradient(65deg, #457b9d, #a8dadc);
   color: white;
   padding: 14px;
   font-size: 12px;
   border: none;
 }
 
-.dropdown-content2 button:hover {background-color: #ddd;}
+.dropdown-content2 button:hover {background: linear-gradient(85deg,#a8dadc,#f1faee);}
 
 .dropdown2:hover .dropdown-content2 {display: block !important;}
 
