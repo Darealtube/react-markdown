@@ -6,7 +6,7 @@ React Markdown Previewer is finished!!
 
 # React Hooks Used
 
-useState
+**useState**
 
 I used [Remarkable](https://github.com/jonschlinkert/remarkable) for this project.
 
