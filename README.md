@@ -2,7 +2,7 @@
 
 React Markdown Previewer is finished!!
 
-![](/src/images/mar.png)
+![](/src/images/mar2.png)
 
 # React Hooks Used
 
